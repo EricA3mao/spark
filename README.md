@@ -8,3 +8,4 @@ spark学习
   
 说明：
   需要jdk1.7   maven3.3  hadoop2.6支持
+  hadoop可以不安装。
