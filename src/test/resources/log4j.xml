@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{HH:mm:ss} %p %m      |[%c:%L][%t]%n" />
+		</layout>
+	</appender>
+
+	<appender name="type2" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/tmp/logs/crm.log" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd'.log'" />
+		<!-- <param name="MaxFileSize" value="100120KB" /> -->
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-d{HH:mm:ss} %p %m      |[%c:%L][%t]%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.zbxsoft">
+		<level value="DEBUG"></level>
+	</logger>
+	<logger name="java.sql">
+		<level value="INFO"></level>
+	</logger>
+	
+	<logger name="org">
+		<level value="ERROR"></level>
+	</logger> 
+	<logger name="org.apache">
+		<level value="RROR"></level>
+	</logger>  
+	<logger name="org.openid4java.server.RealmVerifier">
+		<level value="FATAL"></level>
+	</logger>
+	<logger name="org.springframework">
+		<level value="ERROR"></level>
+	</logger> 
+	
+	<logger name="com.mchange">
+		<level value="ERROR"></level>
+	</logger>
+	<logger name="com.opensymphony">
+		<level value="ERROR"></level>
+	</logger>
+	<logger name="freemarker">
+		<level value="ERROR"></level> 
+	</logger> 
+	<logger name="httpclient">
+		<level value="ERROR"></level>
+	</logger>
+ 
+	<root>
+	   
+	 	<appender-ref ref="stdout" />  
+	   <!-- 
+		<appender-ref ref="type2" />
+	    -->
+	 	 
+	</root>
+</log4j:configuration>
